@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bg10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0E4D0;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow10" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg10)" rx="12"/>
+  <circle cx="200" cy="130" r="80" fill="url(#glow10)"/>
+  <!-- Large protective shield -->
+  <path d="M200 45 L145 70 L145 140 Q145 185 200 210 Q255 185 255 140 L255 70 Z" fill="#B8860B" opacity="0.15" stroke="#B8860B" stroke-width="2.5" opacity="0.4"/>
+  <!-- Inner shield -->
+  <path d="M200 60 L158 80 L158 135 Q158 170 200 190 Q242 170 242 135 L242 80 Z" fill="#D4A843" opacity="0.1" stroke="#D4A843" stroke-width="1.5" opacity="0.3"/>
+  <!-- Om symbol in center -->
+  <g transform="translate(200, 125)" opacity="0.45">
+    <text x="0" y="8" text-anchor="middle" font-size="36" fill="#B8860B" font-family="serif">&#x0950;</text>
+  </g>
+  <!-- Light rays emanating from shield -->
+  <g opacity="0.15">
+    <line x1="200" y1="45" x2="200" y2="20" stroke="#B8860B" stroke-width="1.5"/>
+    <line x1="170" y1="50" x2="158" y2="30" stroke="#B8860B" stroke-width="1"/>
+    <line x1="230" y1="50" x2="242" y2="30" stroke="#B8860B" stroke-width="1"/>
+    <line x1="150" y1="75" x2="130" y2="62" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="250" y1="75" x2="270" y2="62" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="145" y1="100" x2="125" y2="95" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="255" y1="100" x2="275" y2="95" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="145" y1="130" x2="125" y2="130" stroke="#B8860B" stroke-width="0.6"/>
+    <line x1="255" y1="130" x2="275" y2="130" stroke="#B8860B" stroke-width="0.6"/>
+  </g>
+  <!-- Diya lamps at base -->
+  <g transform="translate(160, 230)" opacity="0.35">
+    <ellipse cx="0" cy="0" rx="10" ry="3" fill="#B8860B"/>
+    <path d="M-6 0 Q0 -8 6 0" fill="#D4A843"/>
+    <ellipse cx="0" cy="-8" rx="2.5" ry="5" fill="#FFD700" opacity="0.8"/>
+    <ellipse cx="0" cy="-9" rx="1.5" ry="3" fill="#FFF8DC" opacity="0.9"/>
+  </g>
+  <g transform="translate(240, 230)" opacity="0.35">
+    <ellipse cx="0" cy="0" rx="10" ry="3" fill="#B8860B"/>
+    <path d="M-6 0 Q0 -8 6 0" fill="#D4A843"/>
+    <ellipse cx="0" cy="-8" rx="2.5" ry="5" fill="#FFD700" opacity="0.8"/>
+    <ellipse cx="0" cy="-9" rx="1.5" ry="3" fill="#FFF8DC" opacity="0.9"/>
+  </g>
+  <!-- Camphor flame in center bottom -->
+  <g transform="translate(200, 245)" opacity="0.3">
+    <ellipse cx="0" cy="0" rx="12" ry="4" fill="#B8860B"/>
+    <ellipse cx="0" cy="-10" rx="3" ry="6" fill="#FFD700" opacity="0.7"/>
+    <ellipse cx="0" cy="-12" rx="2" ry="4" fill="#FFF8DC" opacity="0.8"/>
+  </g>
+  <!-- Swirling negative energy being dispersed (fading) -->
+  <g opacity="0.06">
+    <path d="M100 150 Q110 130 120 150 Q130 170 140 150" stroke="#4A4A4A" stroke-width="1.5" fill="none"/>
+    <path d="M260 150 Q270 130 280 150 Q290 170 300 150" stroke="#4A4A4A" stroke-width="1.5" fill="none"/>
+  </g>
+  <!-- Decorative -->
+  <circle cx="100" cy="260" r="2" fill="#D4A843" opacity="0.15"/>
+  <circle cx="300" cy="260" r="2" fill="#D4A843" opacity="0.15"/>
+  <circle cx="80" cy="230" r="1.5" fill="#B8860B" opacity="0.1"/>
+  <circle cx="320" cy="230" r="1.5" fill="#B8860B" opacity="0.1"/>
+</svg>

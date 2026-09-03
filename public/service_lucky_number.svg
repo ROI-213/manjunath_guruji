@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5E6C8;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow7" cx="50%" cy="45%" r="35%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg7)" rx="12"/>
+  <circle cx="200" cy="140" r="70" fill="url(#glow7)"/>
+  <!-- Sacred geometry - circles -->
+  <circle cx="200" cy="130" r="50" stroke="#B8860B" stroke-width="1" fill="none" opacity="0.2"/>
+  <circle cx="200" cy="130" r="35" stroke="#D4A843" stroke-width="0.8" fill="none" opacity="0.25"/>
+  <circle cx="200" cy="130" r="20" stroke="#B8860B" stroke-width="0.6" fill="none" opacity="0.3"/>
+  <!-- Numbers floating around -->
+  <g opacity="0.5" font-family="Georgia, serif" font-weight="bold">
+    <text x="200" y="135" text-anchor="middle" font-size="32" fill="#B8860B">1</text>
+    <text x="165" y="105" text-anchor="middle" font-size="18" fill="#D4A843" opacity="0.6">3</text>
+    <text x="235" y="105" text-anchor="middle" font-size="18" fill="#D4A843" opacity="0.6">7</text>
+    <text x="155" y="145" text-anchor="middle" font-size="16" fill="#B8860B" opacity="0.4">9</text>
+    <text x="245" y="145" text-anchor="middle" font-size="16" fill="#B8860B" opacity="0.4">5</text>
+    <text x="175" y="170" text-anchor="middle" font-size="14" fill="#D4A843" opacity="0.35">2</text>
+    <text x="225" y="170" text-anchor="middle" font-size="14" fill="#D4A843" opacity="0.35">8</text>
+  </g>
+  <!-- Star of numbers -->
+  <g opacity="0.15">
+    <line x1="200" y1="80" x2="200" y2="60" stroke="#B8860B" stroke-width="1"/>
+    <line x1="165" y1="100" x2="150" y2="85" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="235" y1="100" x2="250" y2="85" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="155" y1="130" x2="135" y2="130" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="245" y1="130" x2="265" y2="130" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Calendar/date symbol -->
+  <g transform="translate(85, 75)" opacity="0.25">
+    <rect x="0" y="5" width="30" height="25" rx="2" fill="white" stroke="#B8860B" stroke-width="1"/>
+    <rect x="0" y="0" width="30" height="8" rx="2" fill="#B8860B" opacity="0.6"/>
+    <text x="15" y="23" text-anchor="middle" font-size="10" fill="#B8860B" font-family="Georgia">15</text>
+  </g>
+  <!-- Infinity/continuity symbol -->
+  <g transform="translate(300, 200)" opacity="0.2">
+    <path d="M0 0 Q-10 -8 -15 0 Q-10 8 0 0 Q10 -8 15 0 Q10 8 0 0Z" stroke="#B8860B" stroke-width="1.5" fill="none"/>
+  </g>
+  <!-- Decorative dots -->
+  <circle cx="120" cy="220" r="2" fill="#D4A843" opacity="0.15"/>
+  <circle cx="280" cy="220" r="2" fill="#D4A843" opacity="0.15"/>
+  <circle cx="100" cy="250" r="1.5" fill="#B8860B" opacity="0.1"/>
+  <circle cx="300" cy="250" r="1.5" fill="#B8860B" opacity="0.1"/>
+</svg>

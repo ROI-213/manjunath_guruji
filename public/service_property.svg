@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5E6C8;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow6" cx="50%" cy="40%" r="35%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg6)" rx="12"/>
+  <circle cx="200" cy="130" r="70" fill="url(#glow6)"/>
+  <!-- House structure -->
+  <rect x="165" y="120" width="70" height="60" fill="#B8860B" opacity="0.25" rx="2"/>
+  <!-- Roof -->
+  <path d="M155 120 L200 80 L245 120 Z" fill="#B8860B" opacity="0.35"/>
+  <!-- Door -->
+  <rect x="190" y="145" width="20" height="35" rx="2" fill="#D4A843" opacity="0.3"/>
+  <!-- Windows -->
+  <rect x="172" y="130" width="12" height="12" rx="1" fill="#D4A843" opacity="0.25"/>
+  <rect x="216" y="130" width="12" height="12" rx="1" fill="#D4A843" opacity="0.25"/>
+  <!-- Chimney -->
+  <rect x="225" y="88" width="10" height="32" fill="#B8860B" opacity="0.2"/>
+  <!-- Land/ground -->
+  <path d="M80 180 Q140 175 200 178 Q260 181 320 177" stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <path d="M100 185 Q150 182 200 184 Q250 186 300 183" stroke="#D4A843" stroke-width="1" fill="none" opacity="0.12"/>
+  <!-- Trees on sides -->
+  <g opacity="0.2">
+    <circle cx="120" cy="145" r="15" fill="#B8860B"/>
+    <rect x="118" y="155" width="4" height="20" fill="#8B6914"/>
+  </g>
+  <g opacity="0.2">
+    <circle cx="280" cy="148" r="12" fill="#B8860B"/>
+    <rect x="278" y="156" width="4" height="18" fill="#8B6914"/>
+  </g>
+  <!-- Document/paper (legal) -->
+  <g transform="translate(310, 100)" opacity="0.25">
+    <rect x="0" y="0" width="25" height="32" rx="2" fill="white" stroke="#B8860B" stroke-width="1"/>
+    <line x1="4" y1="8" x2="21" y2="8" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="4" y1="13" x2="21" y2="13" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="4" y1="18" x2="18" y2="18" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="4" y1="23" x2="15" y2="23" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Family figures near house -->
+  <g opacity="0.3">
+    <circle cx="145" cy="158" r="6" fill="#B8860B"/>
+    <circle cx="155" cy="160" r="5" fill="#D4A843"/>
+  </g>
+  <!-- Spiritual peace rays -->
+  <g opacity="0.1">
+    <line x1="200" y1="80" x2="200" y2="55" stroke="#B8860B" stroke-width="1"/>
+    <line x1="190" y1="82" x2="182" y2="62" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="210" y1="82" x2="218" y2="62" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Decorative -->
+  <circle cx="100" cy="250" r="1.5" fill="#D4A843" opacity="0.2"/>
+  <circle cx="300" cy="250" r="1.5" fill="#D4A843" opacity="0.2"/>
+</svg>

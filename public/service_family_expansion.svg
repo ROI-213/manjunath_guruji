@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5E6C8;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg1)" rx="12"/>
+  <circle cx="200" cy="120" r="80" fill="url(#glow1)"/>
+  <!-- Mother figure -->
+  <circle cx="170" cy="100" r="18" fill="#B8860B" opacity="0.8"/>
+  <path d="M152 125 Q170 145 188 125" stroke="#B8860B" stroke-width="2.5" fill="none" opacity="0.7"/>
+  <line x1="170" y1="118" x2="170" y2="155" stroke="#B8860B" stroke-width="2.5" opacity="0.7"/>
+  <line x1="170" y1="130" x2="155" y2="145" stroke="#B8860B" stroke-width="2" opacity="0.6"/>
+  <line x1="170" y1="130" x2="185" y2="142" stroke="#B8860B" stroke-width="2" opacity="0.6"/>
+  <!-- Child figure -->
+  <circle cx="210" cy="115" r="12" fill="#D4A843" opacity="0.8"/>
+  <path d="M198 128 Q210 142 222 128" stroke="#D4A843" stroke-width="2" fill="none" opacity="0.7"/>
+  <line x1="210" y1="127" x2="210" y2="155" stroke="#D4A843" stroke-width="2" opacity="0.7"/>
+  <line x1="210" y1="135" x2="200" y2="148" stroke="#D4A843" stroke-width="1.5" opacity="0.6"/>
+  <line x1="210" y1="135" x2="220" y2="146" stroke="#D4A843" stroke-width="1.5" opacity="0.6"/>
+  <!-- Father figure -->
+  <circle cx="240" cy="100" r="16" fill="#8B6914" opacity="0.7"/>
+  <path d="M224 120 Q240 138 256 120" stroke="#8B6914" stroke-width="2.5" fill="none" opacity="0.6"/>
+  <line x1="240" y1="116" x2="240" y2="155" stroke="#8B6914" stroke-width="2.5" opacity="0.6"/>
+  <line x1="240" y1="128" x2="228" y2="142" stroke="#8B6914" stroke-width="2" opacity="0.5"/>
+  <line x1="240" y1="128" x2="252" y2="140" stroke="#8B6914" stroke-width="2" opacity="0.5"/>
+  <!-- Hands holding child (connecting lines) -->
+  <path d="M185 135 Q195 130 200 128" stroke="#B8860B" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="3,3"/>
+  <path d="M225 128 Q218 130 212 132" stroke="#8B6914" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="3,3"/>
+  <!-- Spiritual blessing rays -->
+  <g opacity="0.3">
+    <line x1="200" y1="30" x2="200" y2="60" stroke="#B8860B" stroke-width="1.5"/>
+    <line x1="180" y1="35" x2="185" y2="62" stroke="#B8860B" stroke-width="1"/>
+    <line x1="220" y1="35" x2="215" y2="62" stroke="#B8860B" stroke-width="1"/>
+    <line x1="165" y1="42" x2="172" y2="65" stroke="#B8860B" stroke-width="0.8"/>
+    <line x1="235" y1="42" x2="228" y2="65" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Diya lamp -->
+  <ellipse cx="200" cy="200" rx="20" ry="6" fill="#B8860B" opacity="0.4"/>
+  <path d="M190 200 Q200 185 210 200" fill="#D4A843" opacity="0.6"/>
+  <ellipse cx="200" cy="185" rx="4" ry="8" fill="#FFD700" opacity="0.7"/>
+  <ellipse cx="200" cy="183" rx="2" ry="5" fill="#FFF8DC" opacity="0.9"/>
+  <!-- Heart symbol -->
+  <path d="M195 170 C195 165 188 162 188 167 C188 172 195 178 195 178 C195 178 202 172 202 167 C202 162 195 165 195 170Z" fill="#B8860B" opacity="0.35"/>
+  <!-- Decorative dots -->
+  <circle cx="120" cy="200" r="2" fill="#B8860B" opacity="0.2"/>
+  <circle cx="280" cy="200" r="2" fill="#B8860B" opacity="0.2"/>
+  <circle cx="100" cy="230" r="1.5" fill="#D4A843" opacity="0.15"/>
+  <circle cx="300" cy="230" r="1.5" fill="#D4A843" opacity="0.15"/>
+  <!-- Bottom decorative line -->
+  <line x1="120" y1="250" x2="280" y2="250" stroke="#B8860B" stroke-width="0.8" opacity="0.2"/>
+</svg>

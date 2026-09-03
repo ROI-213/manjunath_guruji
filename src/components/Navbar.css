@@ -1,0 +1,226 @@
+/* ==========================================================================
+   EXACT REFERENCE TOP HEADER & NAVIGATION BAR
+   Astro Psychic India | Pandit Shekar Guruji
+   ========================================================================== */
+
+.ref-header-wrapper {
+  width: 100%;
+  background-color: #7A0A0A;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* 1. Top Dark Maroon Header Bar */
+.ref-top-maroon-bar {
+  background: linear-gradient(180deg, #6B0808 0%, #520505 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 1.5rem;
+}
+
+.ref-top-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo Area */
+.ref-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.ref-logo-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.ref-logo-subtitle {
+  font-size: 0.72rem;
+  color: #F3E5AB;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Right Header Contact Info */
+.ref-header-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #FCE7A2;
+  font-size: 0.74rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ref-header-consult-label {
+  font-size: 0.73rem;
+  color: #FDF3D0;
+  opacity: 0.92;
+  margin-bottom: 0.15rem;
+}
+
+.ref-header-phones-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-weight: 700;
+}
+
+.ref-header-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.2s ease;
+}
+
+.ref-header-phone-link:hover {
+  color: #FFE680;
+}
+
+/* 2. Red Main Menu Bar */
+.ref-red-menu-bar {
+  background: linear-gradient(180deg, #D41A1A 0%, #A80D0D 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid #7A0A0A;
+}
+
+.ref-nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  min-height: 38px;
+}
+
+.ref-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.ref-nav-item-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.95rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-transform: capitalize;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ref-nav-item-btn:hover {
+  background-color: #E65100;
+  color: #FFFFFF;
+}
+
+.ref-nav-item-btn.active {
+  background: linear-gradient(180deg, #F57C00 0%, #D84315 100%);
+  color: #FFFFFF;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Green CTA (e.g. Donate / Book) */
+.ref-green-cta-btn {
+  background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.ref-green-cta-btn:hover {
+  background: linear-gradient(180deg, #388E3C 0%, #2E7D32 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Toggle */
+.ref-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+/* Mobile Dropdown */
+.ref-mobile-menu {
+  background-color: #520505;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 0;
+}
+
+.ref-mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ref-mobile-menu-link {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ref-mobile-menu-link.active,
+.ref-mobile-menu-link:hover {
+  background-color: #E65100;
+  color: #FFFFFF;
+}
+
+@media (max-width: 992px) {
+  .ref-nav-list {
+    display: none;
+  }
+  .ref-mobile-toggle {
+    display: block;
+  }
+  .ref-top-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+  .ref-header-contact {
+    align-items: flex-start;
+  }
+}
