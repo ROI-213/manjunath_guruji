@@ -48,7 +48,23 @@ export const initialSiteData = {
       { title: "Photograph Assessment", desc: "Examining visual energy markers for personal clarity." },
       { title: "Spiritual Prayer Guidance", desc: "Positive prayer practices tailored to individual well-being." }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/about_guruji_1.png",
+    images: [
+      {
+        url: '/about_guruji_1.png',
+        alt: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
+        title: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
+        role: 'Divine Spiritual Guru & Sacred Lineage',
+        tag: '★ Parampara Lineage'
+      },
+      {
+        url: '/about_guruji_2.png',
+        alt: 'Pandit Shekar Guruji with Devotee',
+        title: 'Pandit Shekar Guruji',
+        role: 'Sacred Consultations & Devotee Guidance',
+        tag: '★ 25+ Years Experience'
+      }
+    ],
     badgeText: "100% Confidential & Private Environment"
   },
 

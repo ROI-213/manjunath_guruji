@@ -62,8 +62,24 @@ export default function App() {
         "A trusted spiritual consultant and psychic reader dedicated to helping individuals find clarity amidst uncertainty.",
         "Every session combines traditional observation methods with strict confidentiality, deep respect for personal values, and sincere prayer-based spiritual support."
       ],
-      image: initialSiteData.hero.imageUrl,
+      image: '/about_guruji_1.png',
       imageAlt: "Pandit Shekar Guruji Portrait",
+      images: [
+        {
+          url: '/about_guruji_1.png',
+          alt: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
+          title: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
+          role: 'Divine Spiritual Guru & Sacred Lineage',
+          tag: '★ Parampara Lineage'
+        },
+        {
+          url: '/about_guruji_2.png',
+          alt: 'Pandit Shekar Guruji with Devotee',
+          title: 'Pandit Shekar Guruji',
+          role: 'Sacred Consultations & Devotee Guidance',
+          tag: '★ 25+ Years Experience'
+        }
+      ],
       modalities: [
         { title: "Palm Observation", desc: "Hand line & mount analysis for life trajectory insights", icon: "Hand" },
         { title: "Date of Birth Analysis", desc: "Birth timing evaluation for strengths and personal cycles", icon: "Calendar" },

@@ -1,9 +1,26 @@
-import React from 'react';
-import { ShieldCheck, ArrowRight, MessageCircle, Phone, Hand, Calendar, UserCheck, Image as ImageIcon, MessageSquare, Flame, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ShieldCheck, ArrowRight, MessageCircle, Phone, Hand, Calendar, UserCheck, Image as ImageIcon, MessageSquare, Flame, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import ScrollReveal from './Animated/ScrollReveal';
 import SplitTextReveal from './Animated/SplitTextReveal';
 import AnimatedCounter from './Animated/AnimatedCounter';
 import { trackEvent } from '../utils/analytics';
+
+const defaultSlides = [
+  {
+    url: '/about_guruji_1.png',
+    alt: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
+    title: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
+    role: 'Divine Spiritual Guru & Sacred Lineage',
+    tag: '★ Parampara Lineage'
+  },
+  {
+    url: '/about_guruji_2.png',
+    alt: 'Pandit Shekar Guruji with Devotee',
+    title: 'Pandit Shekar Guruji',
+    role: 'Sacred Consultations & Devotee Guidance',
+    tag: '★ 25+ Years Experience'
+  }
+];
 
 const iconMap = {
   Hand: Hand,
@@ -14,60 +31,404 @@ const iconMap = {
   Flame: Flame
 };
 
-export default function AboutGuruji({ aboutData, contactData, onOpenBooking }) {
+export default function AboutGuruji({ aboutData = {}, contactData = {}, onOpenBooking }) {
+  const slides = (aboutData.images && aboutData.images.length > 0) ? aboutData.images : defaultSlides;
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused || slides.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isPaused, slides.length]);
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const trustPoints = aboutData.trustPoints || [
+    "100% Private & Confidential",
+    "No Fear-Based Claims",
+    "Direct WhatsApp & Phone Access",
+    "Global Remote Consultations"
+  ];
+
+  const stats = aboutData.stats || [
+    { value: "25", suffix: "+", label: "Years of Practice" },
+    { value: "1000", suffix: "+", label: "Consultations" },
+    { value: "5", suffix: "", label: "Languages" },
+    { value: "100", suffix: "%", label: "Confidentiality" }
+  ];
+
+  const bio = aboutData.bio || [
+    "A trusted spiritual consultant and psychic reader dedicated to helping individuals find clarity amidst uncertainty.",
+    "Every session combines traditional observation methods with strict confidentiality, deep respect for personal values, and sincere prayer-based spiritual support."
+  ];
+
+  const modalities = aboutData.modalities || [
+    { title: "Palm Observation", desc: "Hand line & mount analysis for life trajectory insights", icon: "Hand" },
+    { title: "Date of Birth Analysis", desc: "Birth timing evaluation for strengths and personal cycles", icon: "Calendar" },
+    { title: "Face Reading", desc: "Intuitive facial observation for personal disposition", icon: "UserCheck" },
+    { title: "Photograph Reading", desc: "Remote image-based consultation from anywhere", icon: "Image" },
+    { title: "Personal Discussion", desc: "Empathetic one-on-one dialogue in a safe space", icon: "MessageSquare" },
+    { title: "Spiritual Prayer Guidance", desc: "Tailored prayer practices for personal well-being", icon: "Flame" }
+  ];
+
   return (
     <section className="about-section" style={{ position: 'relative' }}>
       <div className="container">
         <div className="about-grid">
 
-          {/* Left Column: Guruji Image + Supporting Content Below */}
+          {/* Left Column: Guruji Image Slideshow + Supporting Content Below */}
           <ScrollReveal direction="right" duration={0.8}>
             <div className="about-image-col">
 
-              {/* Guruji Image Area */}
-              <div className="about-img-box" style={{
-                position: 'relative',
-                minHeight: '460px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 'var(--radius-lg)',
-                background: 'radial-gradient(circle at 50% 40%, rgba(184, 134, 11, 0.12) 0%, rgba(252, 251, 247, 0.8) 70%)',
-                border: '1.5px solid var(--border-gold)',
-                boxShadow: 'var(--shadow-gold)',
-                overflow: 'hidden'
-              }}>
-                <div className="glow-aura-ring" />
-                <div style={{ textAlign: 'center', padding: '2rem', position: 'relative', zIndex: 2 }}>
-                  <div style={{
-                    width: '100px',
-                    height: '100px',
-                    margin: '0 auto 1.25rem auto',
+              {/* Guruji Image Carousel Area */}
+              <div
+                className="about-img-box"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onTouchStart={() => setIsPaused(true)}
+                onTouchEnd={() => setIsPaused(false)}
+                style={{
+                  position: 'relative',
+                  height: '475px',
+                  borderRadius: 'var(--radius-lg)',
+                  background: '#0c0717',
+                  border: '1.5px solid var(--border-gold)',
+                  boxShadow: 'var(--shadow-gold)',
+                  overflow: 'hidden',
+                  userSelect: 'none'
+                }}
+              >
+                {/* Rotating subtle zodiac / aura border */}
+                <div className="glow-aura-ring" style={{ pointerEvents: 'none' }} />
+
+                {/* Top Left Badge: Sacred Lineage */}
+                <div style={{
+                  position: 'absolute',
+                  top: '14px',
+                  left: '14px',
+                  zIndex: 6,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  background: 'rgba(15, 8, 28, 0.85)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(212, 175, 55, 0.45)',
+                  padding: '0.35rem 0.8rem',
+                  borderRadius: '9999px',
+                  color: '#FDE68A',
+                  fontSize: '0.78rem',
+                  fontWeight: 700,
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)'
+                }}>
+                  <Sparkles size={13} style={{ color: '#D4AF37' }} />
+                  <span>Sacred Spiritual Heritage</span>
+                </div>
+
+                {/* Top Right: Slide Counter */}
+                <div style={{
+                  position: 'absolute',
+                  top: '14px',
+                  right: '14px',
+                  zIndex: 6,
+                  background: 'rgba(15, 8, 28, 0.85)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(212, 175, 55, 0.35)',
+                  padding: '0.35rem 0.75rem',
+                  borderRadius: '9999px',
+                  color: '#FFFFFF',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.5px'
+                }}>
+                  {currentSlide + 1} / {slides.length}
+                </div>
+
+                {/* Image Slides */}
+                {slides.map((slide, idx) => {
+                  const isActive = idx === currentSlide;
+                  return (
+                    <div
+                      key={idx}
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        opacity: isActive ? 1 : 0,
+                        transform: isActive ? 'scale(1)' : 'scale(1.03)',
+                        transition: 'opacity 0.7s ease-in-out, transform 0.8s ease-in-out',
+                        zIndex: isActive ? 2 : 1,
+                        pointerEvents: isActive ? 'auto' : 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      {/* Atmospheric Blurred Background */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: '-20px',
+                          backgroundImage: `url(${slide.url})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          filter: 'blur(30px) brightness(0.55)',
+                          opacity: 0.6,
+                          transform: 'scale(1.15)',
+                          zIndex: 0
+                        }}
+                      />
+
+                      {/* Spiritual Radial Tint */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'radial-gradient(circle at 50% 35%, rgba(184, 134, 11, 0.15) 0%, rgba(10, 5, 20, 0.65) 85%)',
+                          zIndex: 1
+                        }}
+                      />
+
+                      {/* Foreground Sharp Image */}
+                      <img
+                        src={slide.url}
+                        alt={slide.alt || slide.title}
+                        style={{
+                          position: 'relative',
+                          zIndex: 2,
+                          maxWidth: '100%',
+                          maxHeight: '100%',
+                          width: 'auto',
+                          height: '100%',
+                          objectFit: 'contain',
+                          padding: '16px 16px 95px 16px',
+                          filter: 'drop-shadow(0 10px 24px rgba(0, 0, 0, 0.65))',
+                          cursor: 'pointer'
+                        }}
+                        onClick={handleNext}
+                        title="Click to view next image"
+                      />
+
+                      {/* Bottom Gradient for Contrast */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          height: '135px',
+                          background: 'linear-gradient(to top, rgba(7, 3, 16, 0.95) 0%, rgba(7, 3, 16, 0.7) 60%, transparent 100%)',
+                          zIndex: 3,
+                          pointerEvents: 'none'
+                        }}
+                      />
+
+                      {/* Slide Caption Banner */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          bottom: '12px',
+                          left: '12px',
+                          right: '12px',
+                          zIndex: 4,
+                          background: 'rgba(15, 8, 28, 0.88)',
+                          backdropFilter: 'blur(10px)',
+                          WebkitBackdropFilter: 'blur(10px)',
+                          border: '1px solid rgba(212, 175, 55, 0.35)',
+                          borderRadius: '12px',
+                          padding: '0.65rem 0.95rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          gap: '0.75rem',
+                          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.45)'
+                        }}
+                      >
+                        <div style={{ textAlign: 'left', minWidth: 0 }}>
+                          <div
+                            className="font-serif"
+                            style={{
+                              color: '#FFF8E7',
+                              fontSize: '0.96rem',
+                              fontWeight: 700,
+                              whiteSpace: 'nowrap',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              letterSpacing: '0.3px',
+                              textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+                            }}
+                          >
+                            {slide.title}
+                          </div>
+                          <div
+                            style={{
+                              color: '#E5C07B',
+                              fontSize: '0.78rem',
+                              fontWeight: 500,
+                              whiteSpace: 'nowrap',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis'
+                            }}
+                          >
+                            {slide.role}
+                          </div>
+                        </div>
+
+                        <span
+                          style={{
+                            flexShrink: 0,
+                            fontSize: '0.72rem',
+                            background: 'rgba(212, 175, 55, 0.2)',
+                            color: '#FDE68A',
+                            border: '1px solid rgba(212, 175, 55, 0.45)',
+                            padding: '0.25rem 0.65rem',
+                            borderRadius: '9999px',
+                            fontWeight: 700
+                          }}
+                        >
+                          {slide.tag}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Left Arrow Button */}
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  aria-label="Previous image"
+                  style={{
+                    position: 'absolute',
+                    top: '46%',
+                    left: '10px',
+                    transform: 'translateY(-50%)',
+                    zIndex: 6,
+                    width: '38px',
+                    height: '38px',
                     borderRadius: '50%',
-                    background: 'var(--gold-gradient)',
+                    background: 'rgba(15, 8, 28, 0.8)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(212, 175, 55, 0.5)',
+                    color: '#FDE68A',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#FFFFFF',
-                    boxShadow: '0 8px 30px rgba(184, 134, 11, 0.4)'
-                  }}>
-                    <Sparkles size={48} />
-                  </div>
-                  <h3 className="font-serif" style={{ fontSize: '1.6rem', color: '#1F2937', marginBottom: '0.35rem' }}>
-                    Pandit Shekar Guruji
-                  </h3>
-                  <p style={{ color: '#715104', fontWeight: 600, fontSize: '0.95rem' }}>
-                    Sacred Vedic Astrologer & Psychic Guidance
-                  </p>
-                  <span style={{ display: 'inline-block', marginTop: '0.85rem', fontSize: '0.78rem', background: 'rgba(184, 134, 11, 0.12)', color: '#8B6508', padding: '0.3rem 0.8rem', borderRadius: 'var(--radius-full)', fontWeight: 700 }}>
-                    ★ Verified 25+ Years Lineage
-                  </span>
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.45)',
+                    transition: 'all 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(212, 175, 55, 0.35)';
+                    e.currentTarget.style.transform = 'translateY(-50%) scale(1.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(15, 8, 28, 0.8)';
+                    e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                  }}
+                >
+                  <ChevronLeft size={22} />
+                </button>
+
+                {/* Right Arrow Button */}
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  aria-label="Next image"
+                  style={{
+                    position: 'absolute',
+                    top: '46%',
+                    right: '10px',
+                    transform: 'translateY(-50%)',
+                    zIndex: 6,
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '50%',
+                    background: 'rgba(15, 8, 28, 0.8)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(212, 175, 55, 0.5)',
+                    color: '#FDE68A',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.45)',
+                    transition: 'all 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(212, 175, 55, 0.35)';
+                    e.currentTarget.style.transform = 'translateY(-50%) scale(1.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(15, 8, 28, 0.8)';
+                    e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                  }}
+                >
+                  <ChevronRight size={22} />
+                </button>
+
+                {/* Dot Pagination Indicators */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '72px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    zIndex: 6,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: 'rgba(15, 8, 28, 0.75)',
+                    padding: '4px 10px',
+                    borderRadius: '9999px',
+                    backdropFilter: 'blur(6px)',
+                    WebkitBackdropFilter: 'blur(6px)',
+                    border: '1px solid rgba(212, 175, 55, 0.25)'
+                  }}
+                >
+                  {slides.map((_, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentSlide(idx);
+                      }}
+                      aria-label={`Slide ${idx + 1}`}
+                      style={{
+                        border: 'none',
+                        outline: 'none',
+                        padding: 0,
+                        cursor: 'pointer',
+                        height: '7px',
+                        width: idx === currentSlide ? '22px' : '7px',
+                        borderRadius: '9999px',
+                        background: idx === currentSlide ? 'linear-gradient(90deg, #FDE68A 0%, #D4AF37 100%)' : 'rgba(255, 255, 255, 0.4)',
+                        boxShadow: idx === currentSlide ? '0 0 8px rgba(212, 175, 55, 0.8)' : 'none',
+                        transition: 'all 0.3s ease'
+                      }}
+                    />
+                  ))}
                 </div>
               </div>
 
               {/* Trust Points */}
               <div className="about-trust-row">
-                {aboutData.trustPoints.map((point, idx) => (
+                {trustPoints.map((point, idx) => (
                   <span key={idx} className="trust-pill">
                     <ShieldCheck size={13} />
                     {point}
@@ -77,7 +438,7 @@ export default function AboutGuruji({ aboutData, contactData, onOpenBooking }) {
 
               {/* Stats Counter Row */}
               <div className="about-stats-row">
-                {aboutData.stats.map((stat, idx) => (
+                {stats.map((stat, idx) => (
                   <div key={idx} className="about-stat">
                     <h3 className="font-serif">
                       <AnimatedCounter value={stat.value} suffix={stat.suffix} />
@@ -124,7 +485,7 @@ export default function AboutGuruji({ aboutData, contactData, onOpenBooking }) {
             </ScrollReveal>
 
             <SplitTextReveal
-              text={aboutData.heading}
+              text={aboutData.heading || "About Pandit Shekar Guruji"}
               className="font-serif"
               style={{ fontSize: '2.5rem', color: '#1F2937', marginBottom: '1rem', lineHeight: '1.2' }}
             />
@@ -155,7 +516,7 @@ export default function AboutGuruji({ aboutData, contactData, onOpenBooking }) {
 
             {/* Bio Paragraphs */}
             <ScrollReveal direction="up" delay={0.2}>
-              {aboutData.bio.map((paragraph, idx) => (
+              {bio.map((paragraph, idx) => (
                 <p key={idx} className="about-bio">
                   {paragraph}
                 </p>
@@ -165,7 +526,7 @@ export default function AboutGuruji({ aboutData, contactData, onOpenBooking }) {
             {/* 6 Modalities Grid */}
             <ScrollReveal direction="up" delay={0.3}>
               <div className="about-methods-grid">
-                {aboutData.modalities.map((item, idx) => {
+                {modalities.map((item, idx) => {
                   const Icon = iconMap[item.icon] || Sparkles;
                   return (
                     <div key={idx} className="method-item">

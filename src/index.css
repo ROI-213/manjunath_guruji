@@ -884,6 +884,15 @@ h1, h2, h3, h4, .font-serif {
     flex-direction: column;
     align-items: stretch;
   }
+  .about-img-box {
+    height: 390px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-img-box {
+    height: 340px !important;
+  }
 }
 
 /* Modal Overlay and Content Styles for High-Contrast Text */
