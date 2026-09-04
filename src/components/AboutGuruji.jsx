@@ -112,50 +112,6 @@ export default function AboutGuruji({ aboutData = {}, contactData = {}, onOpenBo
                 {/* Rotating subtle zodiac / aura border */}
                 <div className="glow-aura-ring" style={{ pointerEvents: 'none' }} />
 
-                {/* Top Left Badge: Sacred Lineage */}
-                <div style={{
-                  position: 'absolute',
-                  top: '14px',
-                  left: '14px',
-                  zIndex: 6,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.45rem',
-                  background: 'rgba(15, 8, 28, 0.85)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  border: '1px solid rgba(212, 175, 55, 0.45)',
-                  padding: '0.35rem 0.8rem',
-                  borderRadius: '9999px',
-                  color: '#FDE68A',
-                  fontSize: '0.78rem',
-                  fontWeight: 700,
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)'
-                }}>
-                  <Sparkles size={13} style={{ color: '#D4AF37' }} />
-                  <span>Sacred Spiritual Heritage</span>
-                </div>
-
-                {/* Top Right: Slide Counter */}
-                <div style={{
-                  position: 'absolute',
-                  top: '14px',
-                  right: '14px',
-                  zIndex: 6,
-                  background: 'rgba(15, 8, 28, 0.85)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  border: '1px solid rgba(212, 175, 55, 0.35)',
-                  padding: '0.35rem 0.75rem',
-                  borderRadius: '9999px',
-                  color: '#FFFFFF',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.5px'
-                }}>
-                  {currentSlide + 1} / {slides.length}
-                </div>
-
                 {/* Image Slides */}
                 {slides.map((slide, idx) => {
                   const isActive = idx === currentSlide;
@@ -184,126 +140,45 @@ export default function AboutGuruji({ aboutData = {}, contactData = {}, onOpenBo
                           backgroundImage: `url(${slide.url})`,
                           backgroundSize: 'cover',
                           backgroundPosition: 'center',
-                          filter: 'blur(30px) brightness(0.55)',
-                          opacity: 0.6,
+                          filter: 'blur(28px) brightness(0.55)',
+                          opacity: 0.55,
                           transform: 'scale(1.15)',
                           zIndex: 0
                         }}
                       />
 
-                      {/* Spiritual Radial Tint */}
+                      {/* Subtle Radial Tint */}
                       <div
                         style={{
                           position: 'absolute',
                           inset: 0,
-                          background: 'radial-gradient(circle at 50% 35%, rgba(184, 134, 11, 0.15) 0%, rgba(10, 5, 20, 0.65) 85%)',
+                          background: 'radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0%, rgba(10, 5, 20, 0.5) 90%)',
                           zIndex: 1
                         }}
                       />
 
-                      {/* Foreground Sharp Image */}
+                      {/* Fully Visible Sharp Foreground Image */}
                       <img
                         src={slide.url}
-                        alt={slide.alt || slide.title}
+                        alt={slide.alt || "Spiritual Consultation"}
                         loading="eager"
                         decoding="async"
                         style={{
                           position: 'relative',
                           zIndex: 2,
+                          width: '100%',
+                          height: '100%',
                           maxWidth: '100%',
                           maxHeight: '100%',
-                          width: 'auto',
-                          height: '100%',
                           objectFit: 'contain',
                           imageRendering: '-webkit-optimize-contrast',
-                          padding: '16px 16px 95px 16px',
-                          filter: 'drop-shadow(0 10px 24px rgba(0, 0, 0, 0.65))',
+                          padding: '0',
+                          filter: 'drop-shadow(0 8px 25px rgba(0, 0, 0, 0.6))',
                           cursor: 'pointer'
                         }}
                         onClick={handleNext}
                         title="Click to view next image"
                       />
-
-                      {/* Bottom Gradient for Contrast */}
-                      <div
-                        style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          height: '135px',
-                          background: 'linear-gradient(to top, rgba(7, 3, 16, 0.95) 0%, rgba(7, 3, 16, 0.7) 60%, transparent 100%)',
-                          zIndex: 3,
-                          pointerEvents: 'none'
-                        }}
-                      />
-
-                      {/* Slide Caption Banner */}
-                      <div
-                        style={{
-                          position: 'absolute',
-                          bottom: '12px',
-                          left: '12px',
-                          right: '12px',
-                          zIndex: 4,
-                          background: 'rgba(15, 8, 28, 0.88)',
-                          backdropFilter: 'blur(10px)',
-                          WebkitBackdropFilter: 'blur(10px)',
-                          border: '1px solid rgba(212, 175, 55, 0.35)',
-                          borderRadius: '12px',
-                          padding: '0.65rem 0.95rem',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          gap: '0.75rem',
-                          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.45)'
-                        }}
-                      >
-                        <div style={{ textAlign: 'left', minWidth: 0 }}>
-                          <div
-                            className="font-serif"
-                            style={{
-                              color: '#FFF8E7',
-                              fontSize: '0.96rem',
-                              fontWeight: 700,
-                              whiteSpace: 'nowrap',
-                              overflow: 'hidden',
-                              textOverflow: 'ellipsis',
-                              letterSpacing: '0.3px',
-                              textShadow: '0 2px 4px rgba(0,0,0,0.5)'
-                            }}
-                          >
-                            {slide.title}
-                          </div>
-                          <div
-                            style={{
-                              color: '#E5C07B',
-                              fontSize: '0.78rem',
-                              fontWeight: 500,
-                              whiteSpace: 'nowrap',
-                              overflow: 'hidden',
-                              textOverflow: 'ellipsis'
-                            }}
-                          >
-                            {slide.role}
-                          </div>
-                        </div>
-
-                        <span
-                          style={{
-                            flexShrink: 0,
-                            fontSize: '0.72rem',
-                            background: 'rgba(212, 175, 55, 0.2)',
-                            color: '#FDE68A',
-                            border: '1px solid rgba(212, 175, 55, 0.45)',
-                            padding: '0.25rem 0.65rem',
-                            borderRadius: '9999px',
-                            fontWeight: 700
-                          }}
-                        >
-                          {slide.tag}
-                        </span>
-                      </div>
                     </div>
                   );
                 })}
@@ -388,7 +263,7 @@ export default function AboutGuruji({ aboutData = {}, contactData = {}, onOpenBo
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: '72px',
+                    bottom: '12px',
                     left: '50%',
                     transform: 'translateX(-50%)',
                     zIndex: 6,
