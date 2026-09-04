@@ -9,16 +9,12 @@ const defaultSlides = [
   {
     url: '/about_guruji_hd_1.jpg',
     alt: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
-    title: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
-    role: 'Divine Spiritual Guru & Sacred Lineage',
-    tag: '★ Parampara Lineage'
+    objectPosition: 'center 75%'
   },
   {
     url: '/about_guruji_hd_2.jpg',
     alt: 'Pandit Shekar Guruji with Devotee',
-    title: 'Pandit Shekar Guruji',
-    role: 'Sacred Consultations & Devotee Guidance',
-    tag: '★ 25+ Years Experience'
+    objectPosition: 'center center'
   }
 ];
 
@@ -126,55 +122,22 @@ export default function AboutGuruji({ aboutData = {}, contactData = {}, onOpenBo
                         transition: 'opacity 0.7s ease-in-out, transform 0.8s ease-in-out',
                         zIndex: isActive ? 2 : 1,
                         pointerEvents: isActive ? 'auto' : 'none',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
                         overflow: 'hidden'
                       }}
                     >
-                      {/* Atmospheric Blurred Background */}
-                      <div
-                        style={{
-                          position: 'absolute',
-                          inset: '-20px',
-                          backgroundImage: `url(${slide.url})`,
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center',
-                          filter: 'blur(28px) brightness(0.55)',
-                          opacity: 0.55,
-                          transform: 'scale(1.15)',
-                          zIndex: 0
-                        }}
-                      />
-
-                      {/* Subtle Radial Tint */}
-                      <div
-                        style={{
-                          position: 'absolute',
-                          inset: 0,
-                          background: 'radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0%, rgba(10, 5, 20, 0.5) 90%)',
-                          zIndex: 1
-                        }}
-                      />
-
-                      {/* Fully Visible Sharp Foreground Image */}
                       <img
                         src={slide.url}
                         alt={slide.alt || "Spiritual Consultation"}
                         loading="eager"
                         decoding="async"
                         style={{
-                          position: 'relative',
-                          zIndex: 2,
                           width: '100%',
                           height: '100%',
-                          maxWidth: '100%',
-                          maxHeight: '100%',
-                          objectFit: 'contain',
+                          objectFit: 'cover',
+                          objectPosition: slide.objectPosition || 'center center',
                           imageRendering: '-webkit-optimize-contrast',
-                          padding: '0',
-                          filter: 'drop-shadow(0 8px 25px rgba(0, 0, 0, 0.6))',
-                          cursor: 'pointer'
+                          cursor: 'pointer',
+                          display: 'block'
                         }}
                         onClick={handleNext}
                         title="Click to view next image"

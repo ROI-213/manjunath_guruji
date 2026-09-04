@@ -53,16 +53,12 @@ export const initialSiteData = {
       {
         url: '/about_guruji_hd_1.jpg',
         alt: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
-        title: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
-        role: 'Divine Spiritual Guru & Sacred Lineage',
-        tag: '★ Parampara Lineage'
+        objectPosition: 'center 75%'
       },
       {
         url: '/about_guruji_hd_2.jpg',
         alt: 'Pandit Shekar Guruji with Devotee',
-        title: 'Pandit Shekar Guruji',
-        role: 'Sacred Consultations & Devotee Guidance',
-        tag: '★ 25+ Years Experience'
+        objectPosition: 'center center'
       }
     ],
     badgeText: "100% Confidential & Private Environment"
