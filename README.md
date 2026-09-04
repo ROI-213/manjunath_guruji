@@ -1,6 +1,6 @@
-# React + Vite
+# Pandit Shekar Guruji - Astro Psychic India Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Official website for Pandit Shekar Guruji offering spiritual consultations, palm observation, bad energy clearing, and Vedic guidance.
 
 Currently, two official plugins are available:
 
