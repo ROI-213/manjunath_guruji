@@ -7,14 +7,14 @@ import { trackEvent } from '../utils/analytics';
 
 const defaultSlides = [
   {
-    url: '/about_guruji_1.png',
+    url: '/about_guruji_hd_1.jpg',
     alt: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
     title: 'ಶ್ರೀ ಶ್ರೀ ಶ್ರೀ ಹಠಯೋಗಿ ವೀರಾನಂದ ಸ್ವಾಮೀಜಿ',
     role: 'Divine Spiritual Guru & Sacred Lineage',
     tag: '★ Parampara Lineage'
   },
   {
-    url: '/about_guruji_2.png',
+    url: '/about_guruji_hd_2.jpg',
     alt: 'Pandit Shekar Guruji with Devotee',
     title: 'Pandit Shekar Guruji',
     role: 'Sacred Consultations & Devotee Guidance',
@@ -205,6 +205,8 @@ export default function AboutGuruji({ aboutData = {}, contactData = {}, onOpenBo
                       <img
                         src={slide.url}
                         alt={slide.alt || slide.title}
+                        loading="eager"
+                        decoding="async"
                         style={{
                           position: 'relative',
                           zIndex: 2,
@@ -213,6 +215,7 @@ export default function AboutGuruji({ aboutData = {}, contactData = {}, onOpenBo
                           width: 'auto',
                           height: '100%',
                           objectFit: 'contain',
+                          imageRendering: '-webkit-optimize-contrast',
                           padding: '16px 16px 95px 16px',
                           filter: 'drop-shadow(0 10px 24px rgba(0, 0, 0, 0.65))',
                           cursor: 'pointer'
